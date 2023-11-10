@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Manga Reader</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #343a40;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .manga-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .chapter-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .chapter-list-item {
+            margin-bottom: 10px;
+            width: 48%;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .chapter-list-item:hover {
+            background-color: #0056b3;
+        }
+
+        .manga-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .pdf-btn {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Advanced Manga Reader</h1>
+    </header>
+
+    <main>
+        <h2 class="manga-title">Manga Title</h2>
+
+        <ul class="chapter-list">
+            
+            <!-- Add more chapters as needed -->
+        </ul>
+
+        <img class="manga-image" id="mangaImage" src="placeholder.jpg" alt="Manga Page">
+
+        <!-- Add buttons for PDF downloads -->
+        <button class="pdf-btn" onclick="openPDF('https://tntoiler.github.io/manga/download/itachi1.pdf')">Download Chapter 1 PDF</button>
+        <button class="pdf-btn" onclick="openPDF('https://tntoiler.github.io/manga/download/itachi2.pdf')">Download Chapter 2 PDF</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Advanced Manga Reader</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        function loadChapter(chapter) {
+            // Update the manga title and load the corresponding chapter content
+            document.getElementById('mangaImage').src = `path/to/chapters/${chapter}.jpg`;
+        }
+
+        function openPDF(pdfLink) {
+            // Open the specified PDF link in a new tab
+            window.open(pdfLink, '_blank');
+        }
+    </script>
+</body>
+</html>
